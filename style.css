@@ -3,6 +3,40 @@
   padding: 0px;
   box-sizing: border-box;
 }
+/********************************** hamburger menu ****************************************************/
+#submenu {
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  position: absolute;
+  background-color: #00c8ff;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+
+}
+html{
+  overflow-x: hidden;
+}
+#submenu img {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  height: 70px;
+}
+#mini-ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 10vw;
+  margin-bottom: 30px;
+}
+.mini-link {
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+}
 
 /******************************************************* NavBar *****************************************************************/
 body {
@@ -11,11 +45,12 @@ body {
   margin: 0%;
   padding: 0%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .nav-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 nav {
   display: flex;
@@ -30,11 +65,15 @@ nav {
   justify-content: space-evenly;
   position: fixed;
   top: 0;
+  z-index: 10;
 }
 nav p {
   font-size: 2vw;
   font-weight: 500;
   color: rgb(30, 159, 171);
+}
+nav img {
+  display: none;
 }
 .nav-list {
   display: flex;
@@ -71,10 +110,11 @@ nav p {
 /************************************** Hero Section ********************************/
 
 .hero {
-  padding: 6rem 6rem;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  padding-left: 4vw;
   display: flex;
-  gap: 10rem;
-  justify-content: space-evenly;
+  gap: 5vw;
   align-items: center;
   margin-top: 2em;
 }
@@ -104,17 +144,20 @@ nav p {
 }
 .hero-left p {
   font-weight: 300;
-  font-size: 1.1vw;
+  font-size: 17px;
   line-height: 1.3;
   color: #444444;
 }
 .hero-right {
   /* border: 2px solid black; */
   width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-right img {
-  max-width: 100%;
-  border-radius: 50%;
+  height: 300px;
+  border-radius: 500px;
 }
 .button-flex {
   display: flex;
@@ -156,7 +199,9 @@ i:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  column-gap: 3rem;
+  flex-wrap: wrap;
+  row-gap: 1rem;
 }
 .about-me img:nth-child(odd):hover {
   transform: rotate(30deg);
@@ -291,4 +336,188 @@ textarea {
 .credit ul {
   display: flex;
   gap: 1.7rem;
+}
+
+/********************************** responsive ****************************************************/
+
+#portfolio {
+  width: 90%;
+  margin: auto;
+}
+
+/********************************** tab view ****************************************************/
+@media only screen and (max-width: 941px) {
+  .hero-right img {
+    height: 200px;
+    border-radius: 500px;
+  }
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+  .hero-left p {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.3;
+    color: #444444;
+  }
+  .carousel-item {
+    width: 162px;
+    height: 204px;
+    box-shadow: 2px 2px 4px 1px rgba(217, 215, 215, 0.7);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-top: 70px;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: 500ms all;
+    transition: 500ms all;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    position: relative;
+  }
+  .carousel__container {
+    white-space: nowrap;
+    margin: 45px 0px;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  .about-me {
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .box-left {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .nav-list,
+  .nav-button {
+    display: none;
+  }
+  nav p {
+    font-size: 24px;
+    margin-left: 10%;
+  }
+  nav img {
+    display: block;
+    height: 24px;
+    margin-right: 10%;
+  }
+  nav {
+    justify-content: space-between;
+  }
+}
+/********************************** phone view ****************************************************/
+@media only screen and (max-width: 550px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    /* padding-left: 0vw; */
+    display: flex;
+    padding-left: 0;
+  }
+  .contact-section {
+    display: flex;
+    gap: 2rem;
+    margin-top: 9rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: flex-start;
+    height: 25rem;
+    padding: 0rem 4rem;
+    flex-direction: column-reverse;
+    /* flex-wrap: wrap; */
+  }
+  .box-right {
+    width: 23rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.85rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .box-left {
+    height: 75%;
+    box-shadow: 8px 8px 10px rgba(172, 171, 171, 0.7);
+    width: 23rem;
+    background-color: #00c9ff;
+    color: white;
+    border-radius: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    gap: 0.5rem;
+    padding: 1.5rem 0rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    width: 63%;
+  }
+  .hero-right img {
+    height: 250px;
+    border-radius: 500px;
+  }
+  .hero-left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 83%;
+    /* border: 2px solid black; */
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero-left h1 {
+    font-size: 2.5rem;
+  }
+  .hero-left p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #444444;
+  }
+  .button-flex button {
+    width: 150px;
+    font-size: 15px;
+  }
+  .contact-section {
+    display: flex;
+    /* gap: 2rem; */
+    padding: 0;
+    margin-top: 9rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    /* padding: 0rem 4rem; */
+    flex-direction: column-reverse;
+    /* flex-wrap: wrap; */
+  }
+  .box-left {
+    width: 19rem;
+  }
+  textarea {
+    width: 68%;
+  }
+  .top-two {
+    display: flex;
+    gap: 0.5rem;
+    width: 80%;
+  }
 }
