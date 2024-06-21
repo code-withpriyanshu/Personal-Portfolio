@@ -9,16 +9,16 @@
   height: 100vh;
   z-index: 999;
   position: absolute;
-  background-color: #00c8ff;
+  background-color: #00c8ff8e;
+  backdrop-filter: blur(10px);
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   visibility: hidden;
-
 }
-html{
-  overflow-x: hidden;
+.no-scroll {
+  overflow: hidden;
 }
 #submenu img {
   position: absolute;
